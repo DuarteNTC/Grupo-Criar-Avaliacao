@@ -71,6 +71,12 @@ namespace KartRaceAnalyzer
                 Console.WriteLine($"Piloto: {piloto.Nome} - Volta: {melhorVolta.Numero} - Tempo: {melhorVolta.Tempo}");
             }
             Console.WriteLine();
+
+            // Encontrar a melhor volta da corrida
+            Volta melhorVoltaCorrida = pilotos.SelectMany(x => x.Voltas).OrderBy(x => x.Tempo).First();
+            Console.WriteLine($"Melhor volta da corrida: Piloto: {pilotos.First(x => x.Voltas.Contains(melhorVoltaCorrida)).Nome} - Volta: {melhorVoltaCorrida.Numero} - Tempo: {melhorVoltaCorrida.Tempo}");
+            Console.WriteLine();
+
         }
     }
 }
