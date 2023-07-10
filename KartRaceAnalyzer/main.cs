@@ -62,6 +62,15 @@ namespace KartRaceAnalyzer
                 Volta volta = new Volta { Numero = numeroVolta, Tempo = tempoVolta, VelocidadeMedia = velocidadeMedia };
                 piloto.Voltas.Add(volta);
             }
+
+            // Encontrar a melhor volta de cada piloto
+            Console.WriteLine("Melhor volta de cada piloto:");
+            foreach (Piloto piloto in pilotos)
+            {
+                Volta melhorVolta = piloto.Voltas.OrderBy(x => x.Tempo).First();
+                Console.WriteLine($"Piloto: {piloto.Nome} - Volta: {melhorVolta.Numero} - Tempo: {melhorVolta.Tempo}");
+            }
+            Console.WriteLine();
         }
     }
 }
