@@ -76,7 +76,15 @@ namespace KartRaceAnalyzer
             Volta melhorVoltaCorrida = pilotos.SelectMany(x => x.Voltas).OrderBy(x => x.Tempo).First();
             Console.WriteLine($"Melhor volta da corrida: Piloto: {pilotos.First(x => x.Voltas.Contains(melhorVoltaCorrida)).Nome} - Volta: {melhorVoltaCorrida.Numero} - Tempo: {melhorVoltaCorrida.Tempo}");
             Console.WriteLine();
-
+            
+            // Calcular a velocidade média de cada piloto durante a corrida
+            Console.WriteLine("Velocidade média de cada piloto durante a corrida:");
+            foreach (Piloto piloto in pilotos)
+            {
+                double velocidadeMedia = piloto.Voltas.Select(v => v.VelocidadeMedia).Average();
+                Console.WriteLine($"Piloto: {piloto.Nome} - Velocidade Média: {velocidadeMedia.ToString("F3", CultureInfo.InvariantCulture)}");
+            }
+            Console.WriteLine();
         }
     }
 }
