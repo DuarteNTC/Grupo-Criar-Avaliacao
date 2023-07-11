@@ -85,6 +85,18 @@ namespace KartRaceAnalyzer
                 Console.WriteLine($"Piloto: {piloto.Nome} - Velocidade Média: {velocidadeMedia.ToString("F3", CultureInfo.InvariantCulture)}");
             }
             Console.WriteLine();
+
+             // Descobrir quanto tempo cada piloto chegou após o vencedor
+            Console.WriteLine("Tempo que cada piloto chegou após o vencedor:");
+            Piloto vencedor = pilotos.OrderBy(x => x.Voltas.Count).First();
+            TimeSpan tempoVencedor = vencedor.Voltas.Sum(x => x.Tempo);
+
+            foreach (Piloto piloto in pilotos)
+            {
+                TimeSpan tempoChegada = piloto.Voltas.Sum(x => x.Tempo);
+                TimeSpan tempoAposVencedor = tempoChegada - tempoVencedor;
+                Console.WriteLine($"Piloto: {piloto.Nome} - Tempo após o Vencedor: {tempoAposVencedor.ToString(@"m\:ss\.fff")}");
+            }
         }
     }
 }
