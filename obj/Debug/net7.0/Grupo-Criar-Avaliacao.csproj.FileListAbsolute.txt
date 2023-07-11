@@ -1,0 +1,15 @@
+D:\Projetos\Grupo-Criar-Avaliacao\bin\Debug\net7.0\Grupo-Criar-Avaliacao.exe
+D:\Projetos\Grupo-Criar-Avaliacao\bin\Debug\net7.0\Grupo-Criar-Avaliacao.deps.json
+D:\Projetos\Grupo-Criar-Avaliacao\bin\Debug\net7.0\Grupo-Criar-Avaliacao.runtimeconfig.json
+D:\Projetos\Grupo-Criar-Avaliacao\bin\Debug\net7.0\Grupo-Criar-Avaliacao.dll
+D:\Projetos\Grupo-Criar-Avaliacao\bin\Debug\net7.0\Grupo-Criar-Avaliacao.pdb
+D:\Projetos\Grupo-Criar-Avaliacao\obj\Debug\net7.0\Grupo-Criar-Avaliacao.csproj.AssemblyReference.cache
+D:\Projetos\Grupo-Criar-Avaliacao\obj\Debug\net7.0\Grupo-Criar-Avaliacao.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projetos\Grupo-Criar-Avaliacao\obj\Debug\net7.0\Grupo-Criar-Avaliacao.AssemblyInfoInputs.cache
+D:\Projetos\Grupo-Criar-Avaliacao\obj\Debug\net7.0\Grupo-Criar-Avaliacao.AssemblyInfo.cs
+D:\Projetos\Grupo-Criar-Avaliacao\obj\Debug\net7.0\Grupo-Criar-Avaliacao.csproj.CoreCompileInputs.cache
+D:\Projetos\Grupo-Criar-Avaliacao\obj\Debug\net7.0\Grupo-Criar-Avaliacao.dll
+D:\Projetos\Grupo-Criar-Avaliacao\obj\Debug\net7.0\refint\Grupo-Criar-Avaliacao.dll
+D:\Projetos\Grupo-Criar-Avaliacao\obj\Debug\net7.0\Grupo-Criar-Avaliacao.pdb
+D:\Projetos\Grupo-Criar-Avaliacao\obj\Debug\net7.0\Grupo-Criar-Avaliacao.genruntimeconfig.cache
+D:\Projetos\Grupo-Criar-Avaliacao\obj\Debug\net7.0\ref\Grupo-Criar-Avaliacao.dll
