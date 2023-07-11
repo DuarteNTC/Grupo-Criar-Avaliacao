@@ -32,7 +32,7 @@ namespace KartRaceAnalyzer.Application
             }
 
             // Ordenar os pilotos com base no tempo total e gerar o ranking da corrida
-            var ranking = temposTotais.OrderBy(kv => kv.Value).Select((kv, index) => new { Posicao = index + 1, Piloto = kv.Key, TempoTotal = kv.Value });
+            var ranking = temposTotais.OrderBy(x => x.Value).Select((x, index) => new { Posicao = index + 1, Piloto = x.Key, TempoTotal = x.Value });
 
             // Imprimir o ranking da corrida
             Console.WriteLine("Ranking da corrida:");
@@ -42,21 +42,21 @@ namespace KartRaceAnalyzer.Application
             }
 
             Console.WriteLine();
-            
+
             // Encontrar a melhor volta de cada piloto
             Console.WriteLine("Melhor volta de cada piloto:");
             foreach (Piloto piloto in pilotos)
             {
-                Volta melhorVolta = piloto.Voltas.OrderBy(v => v.Tempo).FirstOrDefault();
+                Volta melhorVolta = piloto.Voltas.OrderBy(x => x.Tempo).FirstOrDefault();
                 if (melhorVolta != null)
                     Console.WriteLine($"Piloto: {piloto.Nome} - Volta: {melhorVolta.Numero} - Tempo: {melhorVolta.Tempo}");
             }
             Console.WriteLine();
 
             // Encontrar a melhor volta da corrida
-            Volta melhorVoltaCorrida = pilotos.SelectMany(p => p.Voltas).OrderBy(v => v.Tempo).FirstOrDefault();
+            Volta melhorVoltaCorrida = pilotos.SelectMany(p => p.Voltas).OrderBy(x => x.Tempo).FirstOrDefault();
             if (melhorVoltaCorrida != null)
-                Console.WriteLine($"Melhor volta da corrida: Piloto: {pilotos.First(p => p.Voltas.Contains(melhorVoltaCorrida)).Nome} - Volta: {melhorVoltaCorrida.Numero} - Tempo: {melhorVoltaCorrida.Tempo}");
+                Console.WriteLine($"Melhor volta da corrida: Piloto: {pilotos.First(x => x.Voltas.Contains(melhorVoltaCorrida)).Nome} - Volta: {melhorVoltaCorrida.Numero} - Tempo: {melhorVoltaCorrida.Tempo}");
             else
                 Console.WriteLine("Nenhuma volta registrada na corrida");
             Console.WriteLine();
@@ -67,7 +67,7 @@ namespace KartRaceAnalyzer.Application
             {
                 if (piloto.Voltas.Count > 0)
                 {
-                    double velocidadeMedia = piloto.Voltas.Select(v => v.VelocidadeMedia).Average();
+                    double velocidadeMedia = piloto.Voltas.Select(x => x.VelocidadeMedia).Average();
                     Console.WriteLine($"Piloto: {piloto.Nome} - Velocidade Média: {velocidadeMedia:F3}");
                 }
                 else
@@ -79,14 +79,14 @@ namespace KartRaceAnalyzer.Application
 
             // Descobrir quanto tempo cada piloto chegou após o vencedor
             Console.WriteLine("Tempo que cada piloto chegou após o vencedor:");
-            Piloto vencedor = pilotos.OrderBy(p => p.Voltas.Count).FirstOrDefault();
+            Piloto vencedor = pilotos.OrderBy(x => x.Voltas.Count).FirstOrDefault();
             if (vencedor != null)
             {
-                double tempoVencedor = vencedor.Voltas.Sum(v => v.Tempo.TotalSeconds);
+                double tempoVencedor = vencedor.Voltas.Sum(x => x.Tempo.TotalSeconds);
 
                 foreach (Piloto piloto in pilotos)
                 {
-                    double tempoChegada = piloto.Voltas.Sum(v => v.Tempo.TotalSeconds);
+                    double tempoChegada = piloto.Voltas.Sum(x => x.Tempo.TotalSeconds);
                     double tempoAposVencedor = tempoChegada - tempoVencedor;
                     TimeSpan tempoAposVencedorTimeSpan = TimeSpan.FromSeconds(tempoAposVencedor);
                     Console.WriteLine($"Piloto: {piloto.Nome} - Tempo após o Vencedor: {tempoAposVencedorTimeSpan:mm\\:ss\\.fff}");
@@ -99,12 +99,12 @@ namespace KartRaceAnalyzer.Application
 
             Console.WriteLine();
             // Verificar se houve pilotos que não completaram a corrida
-            bool algumNaoCompletou = pilotos.Any(p => p.Voltas.Count < 4);
+            bool algumNaoCompletou = pilotos.Any(x => x.Voltas.Count < 4);
 
             if (algumNaoCompletou)
             {
                 Console.WriteLine("Pilotos que não completaram a corrida:");
-                foreach (Piloto piloto in pilotos.Where(p => p.Voltas.Count < 4))
+                foreach (Piloto piloto in pilotos.Where(x => x.Voltas.Count < 4))
                 {
                     Console.WriteLine($"Piloto: {piloto.Nome}");
                 }

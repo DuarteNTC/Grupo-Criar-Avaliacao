@@ -27,8 +27,8 @@ namespace KartRaceAnalyzer.Infrastructure
 
                     return new Piloto(codigo, nome, new List<Volta> { volta });
                 })
-                .GroupBy(p => p.Codigo)
-                .Select(g => new Piloto(g.Key, g.First().Nome, g.SelectMany(p => p.Voltas).ToList()))
+                .GroupBy(x => x.Codigo)
+                .Select(x => new Piloto(x.Key, x.First().Nome, x.SelectMany(x => x.Voltas).ToList()))
                 .ToList();
 
             return pilotos;
